@@ -176,6 +176,10 @@ I am combining my real-world payroll domain experience with technical data analy
 - [Open Spreadsheet](https://github.com/arjun-sg/arjun-sg/blob/main/projects/payroll-system/Payroll_System.xlsx)
 - [Read Analysis](https://github.com/arjun-sg/arjun-sg/blob/main/docs/PROJECTS_DETAIL.md#project-2-payroll-system---excel-analytics)
 
+**HR Analytics Project (Python + Jupiter):**
+- [Open ipynb](https://github.com/arjun-sg/arjun-sg/blob/main/projects/hr-analytics-py/HR_Analytics.ipynb)
+- [Read sample project used in this project](https://github.com/arjun-sg/arjun-sg/blob/main/projects/hr-analytics-py/Employee_Profile_10500.csv)
+
 **More Information:**
 - [Full Navigation Index](https://github.com/arjun-sg/arjun-sg/blob/main/docs/INDEX.md)
 - [Getting Started Guide](https://github.com/arjun-sg/arjun-sg/blob/main/docs/GETTING_STARTED.md)
