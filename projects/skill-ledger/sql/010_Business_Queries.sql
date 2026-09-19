@@ -76,24 +76,7 @@ select learning_mode, count(learning_mode) from students group by Learning_Mode;
 -- Continuously optimize course delivery methods.
 
 
--- 5) How many certificates have been issued?
-
-select count(Certificate_Issued) as No_of_Certificates_Issues from Enrollments where Certificate_Issued = "Issued";
-
--- Business Insights :-
--- This analysis measures the total number of certificates issued.
--- It reflects successful course completion by learners.
--- Higher certification numbers indicate better learner engagement.
--- The findings help evaluate the effectiveness of the platform.
-
--- Business Recommendations :-
--- Encourage students to complete certification requirements.
--- Introduce completion reminders.
--- Monitor certification trends over time.
--- Improve learner engagement initiatives.
-
-
--- 6) Which education level has enrolled in the highest number of courses?
+-- 5) Which education level has enrolled in the highest number of courses?
 
 select education_level, count(Enrollment_ID) as No_of_Courses_Enrollment from Students S inner join Enrollments E on S.Student_ID = E.Student_ID group by education_level;
 
@@ -110,7 +93,7 @@ select education_level, count(Enrollment_ID) as No_of_Courses_Enrollment from St
 -- Improve outreach strategies to attract a diverse learner base.
 
 
--- 7) What is the average final score achieved by students from each education level?
+-- 6) What is the average final score achieved by students from each education level?
 
 select education_level, round(avg(final_score),3) as Avg_Final_Score from students s inner join enrollments e on s.student_id = e.student_id group by education_level;
 
@@ -127,7 +110,7 @@ select education_level, round(avg(final_score),3) as Avg_Final_Score from studen
 -- Personalize learning support where needed.
 
 
--- 8) Which referral source has brought the highest number of enrolled students?
+-- 7) Which referral source has brought the highest number of enrolled students?
 
 select Referral_Source, count(*) as Total_Enrollment from Enrollments e left join Students s on e.student_id = s.student_id group by s.Referral_source;
 
@@ -144,7 +127,7 @@ select Referral_Source, count(*) as Total_Enrollment from Enrollments e left joi
 -- Allocate marketing budgets based on measurable results.
 
 
--- 9) How many enrollments have been recorded for each course level?
+-- 8) How many enrollments have been recorded for each course level?
 
 select course_level, count(Enrollment_ID) as No_of_Enrollments from Courses c inner join Enrollments e on c.course_id = e.course_id group by course_level;
 
@@ -161,7 +144,7 @@ select course_level, count(Enrollment_ID) as No_of_Enrollments from Courses c in
 -- Balance the course portfolio across all levels.
 
 
--- 10) Which cities have produced the highest number of enrollments?
+-- 9) Which cities have produced the highest number of enrollments?
 
 select city, count(Enrollment_ID) as No_of_Enrollments from students s inner join enrollments e on s.student_id = e.student_id group by city order by No_of_Enrollments desc;
 
@@ -178,7 +161,7 @@ select city, count(Enrollment_ID) as No_of_Enrollments from students s inner joi
 -- Continuously monitor city-wise enrollment trends to support regional planning and optimize business expansion initiatives.
 
 
--- 11) How many students have scored higher than the overall average final score across all enrolled students?
+-- 10) How many students have scored higher than the overall average final score across all enrolled students?
 
 select count(*) as Above_Average_Score_Students from enrollments where Final_Score > (select avg(Final_Score) from enrollments) ;
 
@@ -195,7 +178,7 @@ select count(*) as Above_Average_Score_Students from enrollments where Final_Sco
 -- Monitor performance trends regularly to identify future high-achieving learners.
 
 
--- 12) Which course category has generated the highest total revenue from enrollments?
+-- 11) Which course category has generated the highest total revenue from enrollments?
 
 with Category_Revenue AS (
 	select Category, sum(Course_Fee) as Total_Revenue from courses c inner join enrollments e on c.course_id = e.course_id group by category
@@ -215,7 +198,7 @@ select Category, Total_Revenue from Category_Revenue order by Total_Revenue desc
 -- Monitor category-wise revenue trends to support long-term business growth.
 
 
--- 13) Rank all courses within each category based on the total number of enrollments.
+-- 12) Rank all courses within each category based on the total number of enrollments.
 
 select category, course_name, count(enrollment_id) as total_enrollments, 
 rank() over (
@@ -235,7 +218,7 @@ partition by category order by count(enrollment_id) desc
 -- Periodically review rankings to ensure course offerings remain competitive.
 
 
--- 14) Develop a stored procedure that displays enrollment statistics for a selected course.
+-- 13) Develop a stored procedure that displays enrollment statistics for a selected course.
 
 Delimiter //
 create procedure GetCourseEnrollmentStatistics (
@@ -261,7 +244,7 @@ call GetCourseEnrollmentStatistics('SGSG31');
 -- Schedule periodic execution of important procedures for management reporting.
 
 
--- 15) Classify students based on their final scores into Performance Categories (Excellent, Good, Average, Needs Improvement).
+-- 14) Classify students based on their final scores into Performance Categories (Excellent, Good, Average, Needs Improvement).
 
 select case
 		when Final_Score >= 9 then 'Excellent'
