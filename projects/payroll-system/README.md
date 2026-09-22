@@ -137,18 +137,21 @@ payroll-system/
 ## 💡 Key Achievements
 
 **Efficiency Improvements:**
+
 ✅ 80% reduction in manual data entry time  
 ✅ Automated salary slip generation  
 ✅ Reduced processing errors to near-zero  
 ✅ Monthly report generation in minutes  
 
 **Accuracy & Compliance:**
+
 ✅ 100% calculation accuracy  
 ✅ Tax compliance maintained  
 ✅ Audit trail available  
 ✅ Consistent employee payments  
 
 **Scalability:**
+
 ✅ Handles 50+ employees efficiently  
 ✅ Easy to add new employees  
 ✅ Simple parameter updates  
@@ -200,9 +203,13 @@ payroll-system/
 - Version control
 
 ### Business Acumen
+
 ✅ **Understanding payroll processes**
+
 ✅ **Financial compliance knowledge**
+
 ✅ **Process optimization**
+
 ✅ **Scalability planning**
 
 ---
