@@ -161,8 +161,7 @@ select city, count(Enrollment_ID) as No_of_Enrollments from students s inner joi
 -- Continuously monitor city-wise enrollment trends to support regional planning and optimize business expansion initiatives.
 
 
--- 10) How many students have scored higher than the overall average final score across all enrolled students?
-
+-- 10)
 select count(*) as Above_Average_Score_Students from enrollments where Final_Score > (select avg(Final_Score) from enrollments) ;
 
 -- Business Insights :-
